@@ -23,7 +23,8 @@ default: &default
   host: ec2-23-21-220-188.compute-1.amazonaws.com
   username: ichciqijwlimml
   password: b9950902929bcd3d3b888459442a65b16b0dcf014eed3cdef02e9101a4f54674
-  port: 5432development:
+  port: 5432
+development:
   <<: *default
   database: dhg5nmdltu6vm
 
