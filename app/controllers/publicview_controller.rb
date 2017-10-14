@@ -1,0 +1,3 @@
+class PublicviewController < ApplicationController
+	 
+end

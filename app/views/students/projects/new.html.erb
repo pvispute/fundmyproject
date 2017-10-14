@@ -1,0 +1,8 @@
+<% provide(:page_title,'New') %>
+<% provide(:snp_active, 'active') %>
+
+<h1>New Project</h1>
+
+<%= render 'form', project: @project, url: students_projects_url %>
+
+<%= link_to 'Back', students_projects_path %>

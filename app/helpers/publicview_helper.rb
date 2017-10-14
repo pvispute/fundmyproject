@@ -1,0 +1,2 @@
+module PublicviewHelper
+end

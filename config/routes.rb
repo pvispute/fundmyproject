@@ -1,10 +1,21 @@
 Rails.application.routes.draw do
-  
-  get 'New' => 'projects#new'
 
-   get 'Home' => 'projects#index'
+  devise_for :students
+  root to: 'publicview/projects#index'
 
-  root to: 'projects#index'
-  resources :projects
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+ namespace :students do 
+    get '/account' => 'accounts#edit', as: :account
+    put '/info' => 'accounts#update_info', as: :info
+    put '/change_password' => 'accounts#change_password', as: :change_password
+  	resources :projects do
+	  put 'publish' => 'projects#publish', on: :member
+    put 'unpublish' => 'projects#unpublish', on: :member
+   	end
+  end
+
+scope module: 'publicview' do
+  get 'About' => 'pages#about' , as: :about
+  get 'projects' => 'projects#index' , as: :projects
+  get 'projects/:id' => 'projects#show', as: :project
+  end
 end
