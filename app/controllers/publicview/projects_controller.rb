@@ -10,9 +10,10 @@ class ProjectsController < PublicviewController
   # GET /projects/1
   # GET /projects/1.json
   def show
-     @project = Project.friendly.find(param[:id])
+     @project = Project.friendly.find(params[:id])
   end
 
+ 
  
 end
 end
